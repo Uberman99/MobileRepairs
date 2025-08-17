@@ -1,8 +1,8 @@
 // src/components/Navbar.tsx
 import Link from 'next/link';
 
-// You can use a simple SVG icon for the logo placeholder
-const PhoneIcon = (props: any) => (
+// CORRECTIVE ACTION: Replaced 'any' with the precise type for SVG props.
+const PhoneIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     {...props}
     xmlns="http://www.w3.org/2000/svg"
