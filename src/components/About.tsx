@@ -1,14 +1,16 @@
 // src/components/About.tsx
 export default function About() {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32">
+    <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
       <div className="container px-4 md:px-6">
-        <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center">
-          About Our Shop
-        </h2>
-        <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed text-center mt-4">
-          [PLACEHOLDER: This is the About component. Describe your business, your mission, and your commitment to quality repairs here.]
-        </p>
+        <div className="flex flex-col items-center justify-center space-y-4 text-center">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+              Your Trusted Local Repair Experts
+            </h2>
+            <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              We are a team of certified technicians dedicated to providing the highest quality mobile phone repairs. We believe in honest service, transparent pricing, and getting you back to your digital life as quickly as possible.
+            </p>
+        </div>
       </div>
     </section>
   );
