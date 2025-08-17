@@ -12,11 +12,7 @@ export const metadata: Metadata = {
   description: 'Fast, reliable mobile phone repairs.',
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className={`${inter.className} bg-white text-gray-800`}>

@@ -1,33 +1,43 @@
-// src/components/Hero.tsx
+ 'use client';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
-    <section className="w-full py-20 md:py-32 lg:py-40 bg-gray-50">
-      <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center space-y-6 text-center">
-          <div className="space-y-4">
-            <h1 className="text-4xl font-bold tracking-tighter text-gray-900 sm:text-5xl md:text-6xl">
-              Fast, Reliable Mobile Repairs
+    <section
+      className="relative w-full py-24 md:py-32 lg:py-48 bg-cover bg-center"
+      style={{ backgroundImage: "url('/hero-bg.jpg')" }}
+    >
+      {/* Dark overlay for text contrast */}
+      <div className="absolute inset-0 bg-black/60" />
+
+      <div className="relative z-10 container mx-auto px-4 md:px-6">
+        <div className="flex flex-col items-center space-y-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+            className="space-y-4"
+          >
+            <h1 className="font-display text-5xl font-medium tracking-tighter text-white sm:text-7xl md:text-8xl lg:text-9xl">
+              Technology, Restored.
             </h1>
-            <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl">
-              Cracked screens, battery replacements, and water damage. We fix it all with professional service and a quick turnaround.
+            <p className="mx-auto max-w-[700px] text-neutral-300 md:text-xl">
+              We bring your essential devices back to perfect condition with expert care.
             </p>
-          </div>
-          <div className="space-x-4">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
+          >
             <Link
-              className="inline-flex h-10 items-center justify-center rounded-md bg-indigo-600 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-indigo-700 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-indigo-950 disabled:pointer-events-none disabled:opacity-50"
+              className="inline-flex h-12 items-center justify-center rounded-full bg-primary px-8 text-sm font-medium text-white shadow-lg transition-transform hover:scale-105"
               href="/booking"
             >
-              Book Now
+              Schedule Your Repair
             </Link>
-            <Link
-              className="inline-flex h-10 items-center justify-center rounded-md border border-gray-200 bg-white px-8 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
-              href="/contact"
-            >
-              Get a Quote
-            </Link>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

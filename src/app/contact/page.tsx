@@ -1,5 +1,5 @@
 // src/app/contact/page.tsx
-import QuoteForm from '@/components/QuoteForm'; // Assuming contact is a quote form for now
+import QuoteForm from '@/components/QuoteForm';
 
 export default function ContactPage() {
   return (

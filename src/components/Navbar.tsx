@@ -1,33 +1,32 @@
-// src/components/Navbar.tsx
+ 'use client';
 import Link from 'next/link';
-
-const PhoneIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-  </svg>
-);
+import { Phone } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function Navbar() {
   return (
-    <header className="px-4 lg:px-6 h-14 flex items-center border-b bg-white">
-      <Link className="flex items-center justify-center gap-2" href="/">
-        <PhoneIcon className="h-6 w-6 text-indigo-600" />
-        <span className="font-bold">ShopMobile Repairs</span>
-      </Link>
-      <nav className="ml-auto flex gap-4 sm:gap-6">
-        <Link className="text-sm font-medium hover:underline underline-offset-4" href="/services">
-          Services
-        </Link>
-        <Link className="text-sm font-medium hover:underline underline-offset-4" href="/booking">
-          Booking
-        </Link>
-        <Link className="text-sm font-medium hover:underline underline-offset-4" href="/about">
-          About
-        </Link>
-        <Link className="text-sm font-medium hover:underline underline-offset-4" href="/contact">
-          Contact
-        </Link>
-      </nav>
-    </header>
+    <motion.header
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+  transition={{ duration: 0.8, ease: 'easeOut' }}
+      className="sticky top-4 z-50"
+    >
+      <div className="container mx-auto px-4">
+        <div className="flex h-16 items-center justify-between rounded-full border border-border bg-white/70 px-6 shadow-lg backdrop-blur-lg">
+          <Link className="flex items-center justify-center gap-2" href="/">
+            <Phone className="h-6 w-6 text-primary" />
+            <span className="font-bold text-foreground">ShopMobile</span>
+          </Link>
+          <nav className="hidden sm:flex gap-6">
+            <Link className="text-sm font-medium text-neutral-600 hover:text-primary transition-colors" href="/services">Services</Link>
+            <Link className="text-sm font-medium text-neutral-600 hover:text-primary transition-colors" href="/about">About</Link>
+            <Link className="text-sm font-medium text-neutral-600 hover:text-primary transition-colors" href="/contact">Contact</Link>
+          </nav>
+          <Link href="/booking" className="hidden sm:inline-flex h-10 items-center justify-center rounded-full bg-primary px-6 text-sm font-medium text-white shadow transition-colors hover:bg-primary/80">
+            Book Now
+          </Link>
+        </div>
+      </div>
+    </motion.header>
   );
 }
