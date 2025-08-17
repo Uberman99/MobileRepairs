@@ -1,36 +1,35 @@
+// src/components/Hero.tsx
 import Link from 'next/link';
-import React from 'react';
 
-const Hero = () => {
+export default function Hero() {
   return (
-    <section className="relative h-screen flex items-center justify-center">
-      {/* Background Image Layer */}
-      <div 
-        className="absolute top-0 left-0 w-full h-full bg-cover bg-center" 
-        style={{ backgroundImage: "url('/hero-bg.jpg')" }}
-      ></div>
-      {/* Overlay Layer */}
-      <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
-
-      {/* Content Layer */}
-      <div className="relative z-10 text-center text-white p-4 max-w-4xl mx-auto">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
-          Fast, Reliable Phone Repair
-        </h1>
-        <p className="text-lg md:text-xl mb-8">
-          Certified Technicians for iPhone, Samsung & Google Devices.
-        </p>
-        <div className="flex justify-center items-center space-x-4">
-          <Link href="/#quote-form" className="bg-blue-600 text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-blue-700 transition-colors">
-            Get a Free Quote
-          </Link>
-          <Link href="/services" className="border-2 border-white text-white px-6 py-3 rounded-md text-lg font-semibold hover:bg-white hover:text-black transition-colors">
-            View Services
-          </Link>
+    <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
+      <div className="container px-4 md:px-6">
+        <div className="flex flex-col items-center space-y-4 text-center">
+          <div className="space-y-2">
+            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
+              Fast, Reliable Mobile Repairs
+            </h1>
+            <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl">
+              [PLACEHOLDER: This is the Hero component. Your main value proposition goes here. Cracked screens, battery replacements, and more.]
+            </p>
+          </div>
+          <div className="space-x-4">
+            <Link
+              className="inline-flex h-9 items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
+              href="/booking"
+            >
+              Book Now
+            </Link>
+            <Link
+              className="inline-flex h-9 items-center justify-center rounded-md border border-gray-200 bg-white px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
+              href="/contact"
+            >
+              Get a Quote
+            </Link>
+          </div>
         </div>
       </div>
     </section>
   );
-};
-
-export default Hero;
+}
