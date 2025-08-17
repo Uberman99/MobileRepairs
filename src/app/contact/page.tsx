@@ -3,12 +3,18 @@ import QuoteForm from '@/components/QuoteForm'; // Assuming contact is a quote f
 
 export default function ContactPage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="w-full max-w-2xl">
-        <h1 className="text-4xl font-bold text-center mb-8">Contact Us</h1>
-        <p className="text-center mb-8">Submit a quote request below.</p>
+    <div className="w-full max-w-3xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+      <div className="text-center">
+        <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+          Contact Us
+        </h1>
+        <p className="mt-4 text-lg leading-6 text-gray-500">
+          Submit a quote request below, and we&apos;ll get back to you shortly.
+        </p>
+      </div>
+      <div className="mt-12">
         <QuoteForm />
       </div>
-    </main>
+    </div>
   );
 }
