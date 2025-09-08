@@ -1,6 +1,6 @@
  'use client';
 import Link from 'next/link';
-import { Phone } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function Navbar() {
