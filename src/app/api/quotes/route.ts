@@ -42,7 +42,7 @@ export async function POST(request: Request) {
 
     // Define the email options
     const mailOptions = {
-      from: `"ShopMobile Quote Request" <${emailUser}>`,
+      from: `\"Revive Repairs Quote Request\" <${emailUser}>`,
       to: recipientEmail,
       subject: `New Quote Request from ${name}`,
       html: `
